@@ -18,7 +18,8 @@ namespace MLS_Morales_DeLeon.Controllers
 {
     public class JugadoresController : Controller
     {
-        public static bool UsarListaArtesanal1;
+        public static bool UsarListaArtesanal;
+        
         // GET: JugadoresController
         public ActionResult Index()
         {
@@ -68,7 +69,7 @@ namespace MLS_Morales_DeLeon.Controllers
 
         public ActionResult MostrarListaJugadores()
         {
-            if (UsarListaArtesanal1)
+            if (UsarListaArtesanal)
             {
                 return View(Singleton.Instance.listaArtesanalJugadores);
             }
