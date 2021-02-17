@@ -1,6 +1,13 @@
 ﻿using MLS_Morales_DeLeon.Models;
 using MLS_Morales_DeLeon.Models.Storage;
+using CustomGenerics.Estructuras;
 using System;
+using System.IO;
+using System.Web;
+using System.Diagnostics;
+using System.Text;
+
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -11,11 +18,12 @@ namespace MLS_Morales_DeLeon.Controllers
 {
     public class JugadoresController : Controller
     {
+        public static bool UsarListaArtesanal1;
         // GET: JugadoresController
         public ActionResult Index()
         {
-            return View(Singleton.Instance.listaJugadores); //revisar sjjsjs
-          //return View(Singleton.Instance.listaJugadores);
+            return View(Singleton.Instance.listaArtesanalJugadores); //revisar sjjsjs
+                                                                     //return View(Singleton.Instance.listaJugadores);
         }
 
         // GET: JugadoresController/Details/5
@@ -45,6 +53,33 @@ namespace MLS_Morales_DeLeon.Controllers
             }
         }
 
+        public ActionResult listaEleccion()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult listaEleccion(FormCollection collection)
+        {
+            //var UsarListaArtesanal3 = collection["UsarListaArtesanal1"].Split(',')[0];
+            
+            return View();
+        }
+
+        public ActionResult MostrarListaJugadores()
+        {
+            if (UsarListaArtesanal1)
+            {
+                return View(Singleton.Instance.listaArtesanalJugadores);
+            }
+            else
+            {
+                return View(Singleton.Instance.listaJugadores);
+            }
+        }
+      
+
+
         // GET: JugadoresController/Edit/5
         public ActionResult Edit(int id)
         {
@@ -68,7 +103,7 @@ namespace MLS_Morales_DeLeon.Controllers
     };
 
                 Singleton.Instance.listaJugadores.AddFirst(nuevoJugador);
-
+                Singleton.Instance.listaArtesanalJugadores.Add(nuevoJugador);
                 return RedirectToAction(nameof(Index));
             }
 
