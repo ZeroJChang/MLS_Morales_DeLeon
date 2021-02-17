@@ -14,11 +14,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
+
+
+
 namespace MLS_Morales_DeLeon.Controllers
 {
     public class JugadoresController : Controller
     {
-        public static bool UsarListaArtesanal1;
+        public static bool UsarListaArtesanal;
+        public static List<Jugadores> JugadoresListaCopia = new List<Jugadores>();
         // GET: JugadoresController
         public ActionResult Index()
         {
@@ -61,14 +65,21 @@ namespace MLS_Morales_DeLeon.Controllers
         [HttpPost]
         public ActionResult listaEleccion(FormCollection collection)
         {
-            //var UsarListaArtesanal3 = collection["UsarListaArtesanal1"].Split(',')[0];
-            
-            return View();
+            var useListaArtesanal = collection["useHandMadeList"].ToString().Split(',')[0];
+            if (useListaArtesanal.ToLower() == "true")
+            {
+                UsarListaArtesanal = true;
+            }
+            else
+            {
+                UsarListaArtesanal = false;
+            }
+            return RedirectToAction("MostrarListaJugadores");
         }
 
         public ActionResult MostrarListaJugadores()
         {
-            if (UsarListaArtesanal1)
+            if (UsarListaArtesanal)
             {
                 return View(Singleton.Instance.listaArtesanalJugadores);
             }
