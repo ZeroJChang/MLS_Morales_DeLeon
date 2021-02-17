@@ -9,5 +9,6 @@ namespace MLS_Morales_DeLeon.Models
     {
         public string BusquedaPosicion { get; set; }
         public string BusquedaSalario { get; set; }
+        public string Rango { get; set; }
     }
 }

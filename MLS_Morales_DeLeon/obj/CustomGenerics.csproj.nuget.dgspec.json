@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj": {}
+    "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\CustomGenerics\\CustomGenerics.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj": {
+    "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\CustomGenerics\\CustomGenerics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj",
-        "projectName": "MLS_Morales_DeLeon",
-        "projectPath": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj",
+        "projectUniqueName": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\CustomGenerics\\CustomGenerics.csproj",
+        "projectName": "CustomGenerics",
+        "projectPath": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\CustomGenerics\\CustomGenerics.csproj",
         "packagesPath": "C:\\Users\\ZeroJChang\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\obj\\",
+        "outputPath": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\CustomGenerics\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,12 +42,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "dependencies": {
-            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
-              "target": "Package",
-              "version": "[3.1.5, )"
-            }
-          },
           "imports": [
             "net461",
             "net462",
@@ -59,9 +53,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

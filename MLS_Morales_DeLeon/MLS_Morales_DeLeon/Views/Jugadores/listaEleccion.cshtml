@@ -1,0 +1,42 @@
+﻿@model MLS_Morales_DeLeon.Models.ListaArtesanal
+
+@{
+    ViewData["Title"] = "listaEleccion";
+}
+
+<h1>listaEleccion</h1>
+
+<h4>ListaArtesanal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="listaEleccion">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.usarLista, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <p>Si selecciona el check box usara la ListaArtesanal si no la otra jsjs</p>
+                        <div class="checkbox">
+                            @Html.EditorFor(model => model.usarLista)
+                            @Html.ValidationMessageFor(model => model.usarLista, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="Elegir" class="btn btn-primary" />
+            </div>
+         
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
