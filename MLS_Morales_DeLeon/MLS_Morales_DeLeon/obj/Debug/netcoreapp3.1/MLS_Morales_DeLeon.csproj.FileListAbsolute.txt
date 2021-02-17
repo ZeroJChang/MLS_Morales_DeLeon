@@ -222,4 +222,3 @@ C:\Users\ZeroJChang\Desktop\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\ML
 C:\Users\ZeroJChang\Desktop\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\staticwebassets\MLS_Morales_DeLeon.StaticWebAssets.Manifest.cache
 C:\Users\ZeroJChang\Desktop\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\staticwebassets\MLS_Morales_DeLeon.StaticWebAssets.xml
 C:\Users\ZeroJChang\Desktop\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\MLS_Morales_DeLeon.genruntimeconfig.cache
-C:\Users\ZeroJChang\Desktop\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\listaEleccion.cshtml.g.cs
