@@ -190,25 +190,29 @@ namespace MLS_Morales_DeLeon.Controllers
                 foreach (var atributosJugador in arregloJugador)
                 {
                     var atributosJugadorArreglo = atributosJugador.Split(',');
-                    Jugadores jugador = new Jugadores
+                    if (atributosJugadorArreglo[0] != "")
                     {
-                        NombreJugador = atributosJugadorArreglo[0],
-                        Posicion = atributosJugadorArreglo[1],
-                        Salario = Convert.ToInt32(atributosJugadorArreglo[2]),
-                        EquipoMLS = atributosJugadorArreglo[3]
-                    };
+                        Jugadores jugador = new Jugadores
+                        {
+                            NombreJugador = atributosJugadorArreglo[0],
+                            Posicion = atributosJugadorArreglo[1],
+                            Salario = Convert.ToInt32(atributosJugadorArreglo[2]),
+                            EquipoMLS = atributosJugadorArreglo[3]
+                        };
 
-                    AddingFunc AddingFunction;
+                        AddingFunc AddingFunction;
 
-                    if (UsarListaArtesanal)
-                    {
-                        AddingFunction = new AddingFunc(ListaArtesanalAdd);
+                        if (UsarListaArtesanal)
+                        {
+                            AddingFunction = new AddingFunc(ListaArtesanalAdd);
+                        }
+                        else
+                        {
+                            AddingFunction = new AddingFunc(ListaAdd);
+                        }
+                        AddingFunction(jugador);
                     }
-                    else
-                    {
-                        AddingFunction = new AddingFunc(ListaAdd);
-                    }
-                    AddingFunction(jugador);
+                    
                 }
                 aTimer.Stop();
                 ts = aTimer.Elapsed;
