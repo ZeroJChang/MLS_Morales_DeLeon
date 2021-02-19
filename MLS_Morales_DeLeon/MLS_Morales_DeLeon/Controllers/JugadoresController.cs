@@ -39,6 +39,12 @@ namespace MLS_Morales_DeLeon.Controllers
             return View(Singleton.Instance.listaArtesanalJugadores); //revisar sjjsjs
                                                                      //return View(Singleton.Instance.listaJugadores);
         }
+        public ActionResult Time()
+        {
+            string time = "<script>alert('El tiempo de ejecucion fue: " + elapsedTime + "');</script>";
+            TempData["msg"] = time;
+            return View();
+        }
 
         // GET: JugadoresController/Details/5
         public ActionResult Details(int id)
@@ -83,8 +89,8 @@ namespace MLS_Morales_DeLeon.Controllers
                 aTimer.Stop();
                 ts = aTimer.Elapsed;
                 elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
-                //return RedirectToAction("Time");
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Time");
+                //return RedirectToAction(nameof(Index));
             }
             catch
             {
@@ -154,8 +160,7 @@ namespace MLS_Morales_DeLeon.Controllers
                 aTimer.Stop();
                 ts = aTimer.Elapsed;
                 elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
-                return RedirectToAction(nameof(Index));
-                //return RedirectToAction("Time");
+                return RedirectToAction("Time");
             }
 
             catch
@@ -176,7 +181,7 @@ namespace MLS_Morales_DeLeon.Controllers
             {
                 aTimer.Restart();
                 aTimer.Start();
-                StreamReader streamReader = new StreamReader(collection["path"]);
+                StreamReader streamReader = new StreamReader(collection["ruta"]);
                 var arregloJugador = (streamReader.ReadToEnd()).Split('\r');
 
                 for (int i = 0; i < arregloJugador.Length; i++)
@@ -217,8 +222,7 @@ namespace MLS_Morales_DeLeon.Controllers
                 aTimer.Stop();
                 ts = aTimer.Elapsed;
                 elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
-                //return RedirectToAction("Time");
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Time");
             }
             catch
             {
@@ -229,35 +233,20 @@ namespace MLS_Morales_DeLeon.Controllers
         // GET: JugadoresController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            aTimer.Restart();
+            aTimer.Start();
+            var DeleteFunction = new DeleteFunc(ListaDelete);
+            if (UsarListaArtesanal)
+            {
+                DeleteFunction = new DeleteFunc(ListaArtesanalDelete);
+            }
+            DeleteFunction(id);
+            aTimer.Stop();
+            ts = aTimer.Elapsed;
+            elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
+            return RedirectToAction("Time");
         }
 
-        // POST: JugadoresController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                aTimer.Restart();
-                aTimer.Start();
-                var DeleteFunction = new DeleteFunc(ListaDelete);
-                if (UsarListaArtesanal)
-                {
-                    DeleteFunction = new DeleteFunc(ListaArtesanalDelete);
-                }
-                DeleteFunction(id);
-                aTimer.Stop();
-                ts = aTimer.Elapsed;
-                elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
-                //return RedirectToAction("Time");
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         public void ListaAdd(Jugadores jugador)
         {
@@ -283,7 +272,14 @@ namespace MLS_Morales_DeLeon.Controllers
 
         public void ListaArtesanalaEdit(int id, IFormCollection collection)
         {
-            //editar en la lista artesanal D:
+            foreach (var item in Singleton.Instance.listaArtesanalJugadores)
+            {
+                if (item.Id == id)
+                {
+                    item.EquipoMLS = collection["EquipoMLS"];
+                    item.Salario = Convert.ToInt32(collection["Salario"]);
+                }
+            }
         }
 
         public void ListaDelete(int id)

@@ -332,5 +332,8 @@ C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\M
 C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\MLS_Morales_DeLeon.csproj.CopyComplete
 C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\MLS_Morales_DeLeon.dll
 C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\MLS_Morales_DeLeon.pdb
-C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\Create.cshtml.g.cs
 C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\MostrarListaJugadores.cshtml.g.cs
+C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\Create.cshtml.g.cs
+C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\Edit.cshtml.g.cs
+C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\Time.cshtml.g.cs
+C:\Users\Diego\Desktop\URL\Primer Ciclo 2021\Estructura de Datos I\Laboratorio\MLS_Morales_DeLeon\MLS_Morales_DeLeon\MLS_Morales_DeLeon\obj\Debug\netcoreapp3.1\Razor\Views\Jugadores\CrearArchivo.cshtml.g.cs

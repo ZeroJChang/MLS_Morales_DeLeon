@@ -8,6 +8,7 @@
 
 <p>
     @Html.ActionLink("Crear nuevo jugador", "Create")
+    @Html.ActionLink("Carga de archivo", "CrearArchivo")
 </p>
 <table class="table">
     <thead>
@@ -23,9 +24,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Salario)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th></th>
         </tr>
@@ -46,12 +44,8 @@
                 @Html.DisplayFor(modelItem => item.Salario)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
                 @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { d=item.Id})
+                @Html.ActionLink("Delete", "Delete", new { id=item.Id})
             </td>
         </tr>
 }
