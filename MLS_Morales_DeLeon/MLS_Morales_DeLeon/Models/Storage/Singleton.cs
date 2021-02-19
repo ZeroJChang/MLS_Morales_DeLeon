@@ -78,12 +78,12 @@ namespace MLS_Morales_DeLeon.Models.Storage
             return -1;
         }
 
-        public static List<Jugadores> HandMadeListSearch(string searchingValue, string range, DelString delegateString)
+        public static List<Jugadores> BuscarListaArtesanal(string ValorABuscar, string Rango, DelString delegateString)
         {
             List<Jugadores> finalList = new List<Jugadores>();
             foreach (var item in Storage.Singleton.Instance.listaArtesanalJugadores)
             {
-                if (delegateString(item, searchingValue))
+                if (delegateString(item, ValorABuscar))
                 {
                     finalList.Add(item);
                 }
@@ -91,27 +91,27 @@ namespace MLS_Morales_DeLeon.Models.Storage
             return finalList;
         }
 
-        public static List<Jugadores> HandMadeListSearchSalary(int searchingValue, string range, DelInt delInt)
+        public static List<Jugadores> BuscarListaArtesanalSalario(int ValorABuscar, string Rango, DelInt delInt)
         {
             List<Jugadores> finalList = new List<Jugadores>();
             foreach (var item in Storage.Singleton.Instance.listaArtesanalJugadores)
             {
-                switch (range)
+                switch (Rango)
                 {
                     case "menor":
-                        if (delInt(item, searchingValue) < 0)
+                        if (delInt(item, ValorABuscar) < 0)
                         {
                             finalList.Add(item);
                         }
                         break;
                     case "igual":
-                        if (delInt(item, searchingValue) == 0)
+                        if (delInt(item, ValorABuscar) == 0)
                         {
                             finalList.Add(item);
                         }
                         break;
                     case "mayor":
-                        if (delInt(item, searchingValue) > 0)
+                        if (delInt(item, ValorABuscar) > 0)
                         {
                             finalList.Add(item);
                         }
@@ -121,40 +121,40 @@ namespace MLS_Morales_DeLeon.Models.Storage
             return finalList;
         }
 
-        public static List<Jugadores> ListSearch(string searchingValue, DelString delegateString)
+        public static List<Jugadores> BuscarLista(string ValorABuscar, DelString delegateString)
         {
             List<Jugadores> newList = new List<Jugadores>();
             foreach (var item in Storage.Singleton.Instance.listaJugadores)
             {
-                if (delegateString(item, searchingValue))
+                if (delegateString(item, ValorABuscar))
                 {
                     newList.Add(item);
                 }
             }
             return newList;
         }
-
-        public static List<Jugadores> ListSearch(int searchingValue, DelInt delegateInt, string range)
+        
+        public static List<Jugadores> BuscarListaSalario(int ValorABuscar, DelInt delegateInt, string Rango)
         {
             List<Jugadores> newList = new List<Jugadores>();
             foreach (var item in Storage.Singleton.Instance.listaJugadores)
             {
-                switch (range)
+                switch (Rango)
                 {
                     case "menor":
-                        if (delegateInt(item, searchingValue) < 0)
+                        if (delegateInt(item, ValorABuscar) < 0)
                         {
                             newList.Add(item);
                         }
                         break;
                     case "igual":
-                        if (delegateInt(item, searchingValue) == 0)
+                        if (delegateInt(item, ValorABuscar) == 0)
                         {
                             newList.Add(item);
                         }
                         break;
                     case "mayor":
-                        if (delegateInt(item, searchingValue) > 0)
+                        if (delegateInt(item, ValorABuscar) > 0)
                         {
                             newList.Add(item);
                         }

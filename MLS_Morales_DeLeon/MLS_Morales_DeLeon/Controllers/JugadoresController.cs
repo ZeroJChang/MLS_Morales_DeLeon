@@ -27,11 +27,11 @@ namespace MLS_Morales_DeLeon.Controllers
 
         public static bool UsarListaArtesanal;
         public static List<Jugadores> JugadoresListaCopia = new List<Jugadores>();
-
+        
         public delegate void AddingFunc(Jugadores jugadores);
         public delegate void EditFunc(int id, IFormCollection collection);
         public delegate void DeleteFunc(int id);
-
+        public delegate void BuscarFunc(string ParametroBusqueda, string ValorBusqueda, string Rango);
 
         // GET: JugadoresController
         public ActionResult Index()
@@ -291,6 +291,111 @@ namespace MLS_Morales_DeLeon.Controllers
         public void ListaArtesanalDelete(int id)
         {
             Singleton.Instance.listaArtesanalJugadores.GetAndDelete();
+        }
+
+        /// <summary>
+        /// ///////////////////////////////////////////////////////////////
+        /// BUSQUEDA 
+        /// </summary>
+        /// <param name="ParametroBusqueda"></param>
+        /// <param name="ValorBusqueda"></param>
+        /// <param name="Rango"></param>
+        public void BuscarLinkdedLista(string ParametroBusqueda, string ValorBusqueda, string Rango)
+        {
+            if (ParametroBusqueda.ToLower() != "salario")
+            {
+             switch (ParametroBusqueda.ToLower())
+                {
+                    case "nombre": JugadoresListaCopia = Singleton.BuscarLista(ValorBusqueda, Singleton.CompareByName);
+                        break;
+                    case "posicion": JugadoresListaCopia = Singleton.BuscarLista(ValorBusqueda, Singleton.CompareByPosition);
+                        break;
+                    case "club": JugadoresListaCopia = Singleton.BuscarLista(ValorBusqueda, Singleton.CompareByClub);
+                        break;
+                        
+                    default : break;
+                }    
+            } else
+            {
+                JugadoresListaCopia = Singleton.BuscarListaSalario(int.Parse(ParametroBusqueda), Singleton.CompareBySalary,Rango);
+            }
+        }
+        public ActionResult Busqueda()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Busqueda(IFormCollection Collection)
+        {
+            aTimer.Restart();
+            aTimer.Start();
+
+            try
+            {
+                var ParametroBuscar = Collection["ParametroBuscar"];
+                var ValorBusqueda = Collection["ValorBusqueda"] ; 
+                var Rango = Collection["Rango"];
+                BuscarFunc buscarfunc;
+                if (UsarListaArtesanal)
+                {
+                    buscarfunc = new BuscarFunc(BuscarArtesanalLista);
+                }
+                else
+                {
+                    buscarfunc = new BuscarFunc(BuscarLinkdedLista);
+                }
+
+                buscarfunc(ParametroBuscar, ValorBusqueda, Rango);
+
+            }
+            catch
+            {
+
+            }
+            aTimer.Stop();
+            ts = aTimer.Elapsed;
+            elapsedTime = String.Format("{0} h, {1} min, {2} s, {3} ms", ts.Hours, ts.Minutes, ts.Seconds, ts.TotalMilliseconds * 10000);
+            return View("CopiaLista",JugadoresListaCopia);
+        }
+
+        public ActionResult CopiaLista()
+        {
+            return View(JugadoresListaCopia); 
+        }
+
+      
+        public void BuscarArtesanalLista(string ParametroBusqueda, string ValorBusqueda, string Rango)
+        {
+            try
+            {
+                if (ParametroBusqueda.ToLower() != "salario")
+                {
+                    switch (ParametroBusqueda.ToLower())
+                    {
+                        case "nombre":
+                            JugadoresListaCopia = Singleton.BuscarListaArtesanal(ValorBusqueda, Rango, Singleton.CompareByName);
+                            break;
+                        case "posicion":
+                            JugadoresListaCopia = Singleton.BuscarListaArtesanal(ValorBusqueda, Rango, Singleton.CompareByPosition);
+                            break;
+                        case "club":
+                            JugadoresListaCopia = Singleton.BuscarListaArtesanal(ValorBusqueda, Rango, Singleton.CompareByClub);
+                            break;
+
+                        default: break;
+                    }
+                }
+                else
+                {
+                    JugadoresListaCopia = Singleton.BuscarListaArtesanalSalario(int.Parse(ParametroBusqueda), Rango, Singleton.CompareBySalary);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Ta vacio uste´");
+            }
+
         }
     }
 }

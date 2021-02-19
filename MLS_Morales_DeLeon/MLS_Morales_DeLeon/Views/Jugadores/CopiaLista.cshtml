@@ -1,17 +1,12 @@
 ﻿@model IEnumerable<MLS_Morales_DeLeon.Models.Jugadores>
 
 @{
-    ViewData["Title"] = "MostrarListaJugadores";
+    ViewData["Title"] = "CopiaLista";
 }
 
-<h1>MostrarListaJugadores</h1>
+<h1>CopiaLista</h1>
 
-<p>
-    @Html.ActionLink("Crear nuevo jugador", "Create")
-    @Html.ActionLink("Carga de archivo", "CrearArchivo")
-    @Html.ActionLink("Busqueda archivo", "Busqueda")
-    
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -26,6 +21,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th></th>
         </tr>
@@ -46,8 +44,7 @@
                 @Html.DisplayFor(modelItem => item.Salario)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new {  id=item.Id  }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id})
+                @Html.DisplayFor(modelItem => item.Id)
             </td>
         </tr>
 }

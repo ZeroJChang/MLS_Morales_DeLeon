@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xu4W8ug7uW3U+dZOQi08UIF6ZzM/jjOu8muSN4XY9zF0/yavA1s6XyAk477fSfwwE1oLWQX3oYCTzvzyGHSEOA==",
+  "dgSpecHash": "mSnTraUkL0lCQNwK1UQi7zBop/B0wRYIeATIaJnrqnpM+/CeJtF1rtP11VQDQqI0qAcyhW3sd240ATrKWMZs9g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj",
+  "projectFilePath": "C:\\Users\\ZeroJChang\\Desktop\\MLS\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ZeroJChang\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ZeroJChang\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
@@ -112,12 +112,5 @@
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\ZeroJChang\\Desktop\\Laboratorio\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\MLS_Morales_DeLeon\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

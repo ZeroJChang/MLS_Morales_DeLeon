@@ -1,0 +1,43 @@
+﻿@model MLS_Morales_DeLeon.Models.Busqueda
+
+@{
+    ViewData["Title"] = "Busqueda";
+}
+
+<h1>Busqueda</h1>
+
+<h4>Ingrese valor</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Busqueda">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ParametroBusqueda" class="control-label"></label>
+                <input asp-for="ParametroBusqueda" class="form-control" />
+                <span asp-validation-for="ParametroBusqueda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorBusqueda" class="control-label"></label>
+                <input asp-for="ValorBusqueda" class="form-control" />
+                <span asp-validation-for="ValorBusqueda" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Rango" class="control-label"></label>
+                <input asp-for="Rango" class="form-control" />
+                <span asp-validation-for="Rango" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Busqueda" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="CopiaLista">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
