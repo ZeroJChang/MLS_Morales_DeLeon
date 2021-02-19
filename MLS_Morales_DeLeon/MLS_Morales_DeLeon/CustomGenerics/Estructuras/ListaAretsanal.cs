@@ -57,10 +57,10 @@ namespace CustomGenerics.Estructuras
             }
             else
             {
+
                 nuevoNodo.siguiente = primero;
                 nuevoNodo.anterior = ultimo;
                 primero = nuevoNodo;
-                ultimo.siguiente = primero;
                 (primero.siguiente).anterior = primero;
             }
             count++;

@@ -12,16 +12,23 @@
     <div class="col-md-4">
         <form asp-action="Busqueda">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <p>Elija que quiere buscar</p>
+            <p>Para nombre escriba "nombre"</p>
+            <p>Para equipo escriba "club"</p>
+            <p>Para posicion escriba "posicion"</p>
+            <p>Para salario escriba "salario"</p>
             <div class="form-group">
                 <label asp-for="ParametroBusqueda" class="control-label"></label>
                 <input asp-for="ParametroBusqueda" class="form-control" />
                 <span asp-validation-for="ParametroBusqueda" class="text-danger"></span>
             </div>
+            <p>Escriba el valor que desea buscar  (ejemplo: Diego Maradona, Juventus)</p>
             <div class="form-group">
                 <label asp-for="ValorBusqueda" class="control-label"></label>
                 <input asp-for="ValorBusqueda" class="form-control" />
                 <span asp-validation-for="ValorBusqueda" class="text-danger"></span>
             </div>
+            <p>Escriba el salario que desea buscar  (ejemplo: 1500)</p>
             <div class="form-group">
                 <label asp-for="Rango" class="control-label"></label>
                 <input asp-for="Rango" class="form-control" />

@@ -50,7 +50,8 @@ namespace MLS_Morales_DeLeon
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Jugadores}/{action=listaEleccion}/{id?}");
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                //pattern: "{controller=Jugadores}/{action=listaEleccion}/{id?}");
             });
         }
     }
