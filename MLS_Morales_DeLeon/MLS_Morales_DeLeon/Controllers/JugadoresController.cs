@@ -333,7 +333,7 @@ namespace MLS_Morales_DeLeon.Controllers
 
             try
             {
-                var ParametroBuscar = Collection["ParametroBuscar"];
+                var ParametroBusqueda = Collection["ParametroBusqueda"];
                 var ValorBusqueda = Collection["ValorBusqueda"] ; 
                 var Rango = Collection["Rango"];
                 BuscarFunc buscarfunc;
@@ -346,7 +346,7 @@ namespace MLS_Morales_DeLeon.Controllers
                     buscarfunc = new BuscarFunc(BuscarLinkdedLista);
                 }
 
-                buscarfunc(ParametroBuscar, ValorBusqueda, Rango);
+                buscarfunc(ParametroBusqueda, ValorBusqueda, Rango);
 
             }
             catch
